@@ -53,12 +53,18 @@ npm run build
 npm start
 ```
 
+## Live Demo
+
+- **Frontend**: Deploy the client folder to any static hosting (Vercel, Netlify, etc.)
+- **Backend**: https://my-portpolio-e9eq.vercel.app/
+- **GitHub**: https://github.com/piyush8i8/MyPortpolio
+
 ## Features
 
 - Responsive portfolio design
-- Contact form with email functionality
+- Contact form with email functionality (connected to live backend)
 - Modern React with hooks and context
-- Express.js REST API
+- Express.js REST API deployed on Vercel
 - Email integration with Sendinblue
 - Bootstrap & Tailwind CSS styling
 - Smooth animations with Framer Motion
