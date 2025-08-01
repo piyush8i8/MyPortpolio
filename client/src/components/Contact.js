@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { sendEmailAPI } from "../config/api";
+import { sendEmail, initEmailJS } from "../config/emailjs";
 import { 
   FaEnvelope, 
   FaPhone, 
@@ -21,6 +21,11 @@ const Contact = () => {
     message: ""
   });
   const [isLoading, setIsLoading] = useState(false);
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const contactInfo = [
     {
@@ -85,7 +90,7 @@ const Contact = () => {
     setIsLoading(true);
     
     try {
-      const response = await sendEmailAPI(formData);
+      const response = await sendEmail(formData);
       
       if (response.success) {
         toast.success(response.message || "Message sent successfully!");
