@@ -5,7 +5,7 @@ const { sendEmailController } = require("../controllers/portfolioContoller");
 const router = express.Router();
 
 //routes
-router.post("/api/v1/portfolio/sendEmail", sendEmailController);
+router.post("/sendEmail", sendEmailController);
 
 // /export
 module.exports = router;

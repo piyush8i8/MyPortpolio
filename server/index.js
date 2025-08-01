@@ -10,7 +10,17 @@ dotenv.config();
 const app = express();
 
 //midlewares
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://my-portfolio-1ipr.vercel.app",
+    "https://my-portpolio-e9eq.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:3001"
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 
