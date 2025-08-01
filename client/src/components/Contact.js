@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import axios from "axios";
-import { getApiUrl } from "../config/api";
-import API_CONFIG from "../config/api";
+import { sendEmailAPI } from "../config/api";
 import { 
   FaEnvelope, 
   FaPhone, 
@@ -87,14 +85,10 @@ const Contact = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post(getApiUrl(API_CONFIG.ENDPOINTS.SEND_EMAIL), {
-        name: formData.name,
-        email: formData.email,
-        msg: formData.message
-      });
-
-      if (response.data.success) {
-        toast.success("Message sent successfully!");
+      const response = await sendEmailAPI(formData);
+      
+      if (response.success) {
+        toast.success(response.message || "Message sent successfully!");
         setFormData({
           name: "",
           email: "",
@@ -102,11 +96,11 @@ const Contact = () => {
           message: ""
         });
       } else {
-        toast.error("Failed to send message. Please try again.");
+        toast.error(response.message || "Failed to send message. Please try again.");
       }
     } catch (error) {
       console.error("Error sending message:", error);
-      toast.error("Failed to send message. Please try again.");
+      toast.error(error.message || "Failed to send message. Please try again.");
     } finally {
       setIsLoading(false);
     }
