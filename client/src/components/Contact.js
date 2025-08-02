@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { useForm } from "@formspree/react";
 import { 
   FaEnvelope, 
   FaPhone, 
@@ -21,16 +20,7 @@ const Contact = () => {
     message: ""
   });
   
-  // Replace "YOUR_FORM_ID" with your actual Formspree form ID
-  const [state, handleFormspreeSubmit] = useForm("xpwljwow");
-
-  // Handle form success
-  useEffect(() => {
-    if (state.succeeded) {
-      toast.success("Message sent successfully!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }
-  }, [state.succeeded]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const contactInfo = [
     {
@@ -91,12 +81,27 @@ const Contact = () => {
     e.preventDefault();
     if (!validateForm()) return;
     
-    // Submit to Formspree
-    await handleFormspreeSubmit(e);
+    setIsSubmitting(true);
     
-    // Handle errors
-    if (state.errors && state.errors.length > 0) {
+    try {
+      const response = await fetch('https://formspree.io/f/xpwljwow', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        toast.success("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
       toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -274,12 +279,12 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  disabled={state.submitting}
+                  disabled={isSubmitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {state.submitting ? (
+                  {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
                       <span>Sending...</span>
