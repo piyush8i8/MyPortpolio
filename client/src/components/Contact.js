@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
-import { sendEmail, initEmailJS } from "../config/emailjs";
+import { useForm } from "@formspree/react";
 import { 
   FaEnvelope, 
   FaPhone, 
@@ -20,12 +20,17 @@ const Contact = () => {
     subject: "",
     message: ""
   });
-  const [isLoading, setIsLoading] = useState(false);
+  
+  // Replace "YOUR_FORM_ID" with your actual Formspree form ID
+  const [state, handleFormspreeSubmit] = useForm("xpwljwow");
 
-  // Initialize EmailJS on component mount
+  // Handle form success
   useEffect(() => {
-    initEmailJS();
-  }, []);
+    if (state.succeeded) {
+      toast.success("Message sent successfully!");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }
+  }, [state.succeeded]);
 
   const contactInfo = [
     {
@@ -84,30 +89,14 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     if (!validateForm()) return;
-
-    setIsLoading(true);
     
-    try {
-      const response = await sendEmail(formData);
-      
-      if (response.success) {
-        toast.success(response.message || "Message sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: ""
-        });
-      } else {
-        toast.error(response.message || "Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      toast.error(error.message || "Failed to send message. Please try again.");
-    } finally {
-      setIsLoading(false);
+    // Submit to Formspree
+    await handleFormspreeSubmit(e);
+    
+    // Handle errors
+    if (state.errors && state.errors.length > 0) {
+      toast.error("Failed to send message. Please try again.");
     }
   };
 
@@ -285,12 +274,12 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  disabled={isLoading}
+                  disabled={state.submitting}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isLoading ? (
+                  {state.submitting ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
                       <span>Sending...</span>
