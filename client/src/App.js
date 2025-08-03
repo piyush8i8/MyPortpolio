@@ -10,6 +10,7 @@ import Projects from "./components/Projects";
 import Internships from "./components/Internships";
 import Achievements from "./components/Achievements";
 import Education from "./components/Education";
+
 import Activities from "./components/Activities";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -53,14 +54,21 @@ return (
       </div>
       <ScrollToTop
         smooth
-        color="#3b82f6"
+        color="#ffffff"
         style={{ 
-          backgroundColor: "rgba(59, 130, 246, 0.2)", 
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
           borderRadius: "50%",
-          backdropFilter: "blur(8px)",
-          border: "1px solid rgba(255, 255, 255, 0.1)",
-          boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)"
+          backdropFilter: "blur(16px)",
+          border: "2px solid rgba(255, 255, 255, 0.2)",
+          boxShadow: "0 10px 30px rgba(102, 126, 234, 0.4), 0 0 20px rgba(118, 75, 162, 0.3)",
+          width: "50px",
+          height: "50px",
+          right: "30px",
+          bottom: "30px",
+          transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          cursor: "pointer"
         }}
+        className="scroll-to-top-enhanced"
       />
     </>
   );

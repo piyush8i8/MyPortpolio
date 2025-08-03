@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaHeart, FaEnvelope, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaHeart, FaEnvelope, FaDownload, FaCode, FaRocket } from "react-icons/fa";
 import Resume from "../assets/docs/resume.pdf";
 
 const socialLinks = [
@@ -73,9 +73,9 @@ const Footer = () => {
               href="mailto:piyushkumar@example.com"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="no-underline px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+              className="no-underline px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
             >
-              <FaEnvelope className="w-4 h-4" />
+              <FaEnvelope className="w-3 h-3" />
               <span>Email Me</span>
             </motion.a>
             
@@ -85,21 +85,26 @@ const Footer = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="no-underline px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+              className="no-underline px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
             >
-              <FaWhatsapp className="w-4 h-4" />
+              <FaWhatsapp className="w-3 h-3" />
               <span>Hire Me</span>
             </motion.a>
             
             <motion.a
               href={Resume}
               download="Piyush_Kumar_Resume.pdf"
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ 
+                scale: 1.08, 
+                y: -3,
+                boxShadow: "0 20px 40px rgba(255, 193, 7, 0.4)"
+              }}
               whileTap={{ scale: 0.95 }}
-              className="no-underline px-6 py-3 bg-gray-600 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+              className="no-underline px-5 py-2.5 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 hover:from-yellow-400 hover:via-orange-400 hover:to-red-400 text-white font-bold text-sm rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-2 border-2 border-yellow-300/30 hover:border-yellow-200/50 relative overflow-hidden group"
             >
-              <FaDownload className="w-4 h-4" />
-              <span>Download CV</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <FaDownload className="w-4 h-4 relative z-10 animate-bounce" />
+              <span className="relative z-10 tracking-wide">Download CV</span>
             </motion.a>
           </motion.div>
 

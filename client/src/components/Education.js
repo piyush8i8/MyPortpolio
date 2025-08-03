@@ -85,7 +85,9 @@ const Education = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <FaMedal className="w-4 h-4 text-yellow-400" />
-                    <span className="text-yellow-400 font-medium">{edu.grade}</span>
+                    <div className="cgpa-container">
+                      <span className="cgpa-text">{edu.grade}</span>
+                    </div>
                   </div>
                 </div>
               </div>
