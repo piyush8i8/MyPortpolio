@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaWhatsapp, FaHeart, FaEnvelope, FaDownload, FaCode, FaRocket } from "react-icons/fa";
-import Resume from "../assets/docs/resume.pdf";
+import Resume from "../assets/docs/piyush-updated-resume-9.pdf";
 
 const socialLinks = [
   { 
@@ -61,7 +61,6 @@ const Footer = () => {
             </p>
           </motion.div>
 
-          {/* Quick Actions */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -144,7 +143,7 @@ const Footer = () => {
             })}
           </div>
 
-          {/* Divider */}
+          
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "100%" }}
@@ -153,7 +152,7 @@ const Footer = () => {
             className="h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent max-w-md"
           />
 
-          {/* Copyright */}
+         
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

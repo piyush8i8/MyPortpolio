@@ -92,7 +92,6 @@ const Certifications = () => {
           ))}
         </div>
 
-        {/* Certification Summary Table */}
        <motion.div
   initial={{ opacity: 0, y: 30 }}
   whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +100,7 @@ const Certifications = () => {
   className="mt-16"
 >
   <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8 shadow-2xl relative overflow-hidden">
-    {/* Gradient Glow Background */}
+    
     <div className="absolute inset-0 z-0 bg-gradient-to-tr from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl" />
 
     <h3 className="relative z-10 text-3xl font-extrabold text-white mb-8 text-center drop-shadow-lg">

@@ -35,7 +35,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Update active section based on scroll position
+      
       const sections = navItems.map(item => item.href.substring(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i]);
@@ -114,7 +114,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Theme Toggle & Mobile Menu Button */}
+            
             <div className="flex items-center space-x-4">
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -148,7 +148,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+       
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
@@ -182,7 +182,6 @@ const Navbar = () => {
         </AnimatePresence>
       </motion.nav>
 
-      {/* Spacer to prevent content from hiding behind fixed navbar */}
       <div className="h-20"></div>
     </>
   );

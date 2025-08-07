@@ -82,7 +82,7 @@ const Internships = () => {
                 {internship.description}
               </p>
 
-              {/* Stipend Information */}
+              
               <div className="mb-4">
                 <div className="flex items-center space-x-2 mb-2">
                   <FaMoneyBillWave className="w-4 h-4 text-green-400" />
@@ -90,7 +90,7 @@ const Internships = () => {
                 </div>
               </div>
 
-              {/* Technologies */}
+              
               <div className="flex flex-wrap gap-2 mb-6">
                 {internship.technologies.map((tech, techIndex) => (
                   <span

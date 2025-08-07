@@ -202,7 +202,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Project Content */}
+              
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-xl font-bold text-white">{project.title}</h3>

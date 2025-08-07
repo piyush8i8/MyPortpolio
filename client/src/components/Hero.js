@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaDownload, FaWhatsapp, FaGithub, FaLinkedin } from "react-icons/fa";
-import Resume from "../assets/docs/resume.pdf";
+import Resume from "../assets/docs/piyush-updated-resume-9.pdf";
 
 const Hero = () => {
   const socialLinks = [
@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Animated Glowing Background */}
+      
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2s"></div>
@@ -47,7 +47,7 @@ const Hero = () => {
           animate="visible"
           className="text-center"
         >
-          {/* Creative Image Card */}
+        
           <motion.div variants={itemVariants} className="mb-12">
             <motion.div
               className="relative mx-auto w-[300px] md:w-[360px] lg:w-[420px] h-[220px] md:h-[250px] lg:h-[300px] overflow-hidden rounded-2xl shadow-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg"
@@ -83,40 +83,38 @@ const Hero = () => {
 
               
 
-              {/* Glowing gradient border */}
+            
               <div className="absolute inset-0 rounded-2xl border border-white/10 pointer-events-none"></div>
 
-              {/* Glass reflection effect */}
+             
               <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-10 pointer-events-none"></div>
 
-              {/* Floating shimmer */}
+             
               <div className="absolute top-4 left-4 w-3 h-3 bg-white/40 rounded-full animate-ping"></div>
               <div className="absolute bottom-4 right-4 w-2 h-2 bg-white/30 rounded-full animate-bounce"></div>
             </motion.div>
           </motion.div>
 
-          {/* Greeting */}
+         
           <motion.div variants={itemVariants} className="mb-4">
             <p className="text-lg md:text-xl text-gray-300 font-medium">
               Hello, I'm
             </p>
           </motion.div>
 
-          {/* Name */}
+          
           <motion.div variants={itemVariants} className="mb-6">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Piyush Kumar
             </h1>
           </motion.div>
 
-          {/* Typewriter Title */}
           <motion.div variants={itemVariants} className="mb-8">
             <div className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white h-16 flex items-center justify-center">
               <span className="mr-2">I'm a</span>
               <Typewriter
                 options={{
                   strings: [
-                    "Passion for Scalable & User-Centric Solutions",
                     "Full Stack Developer",
                     "MERN Stack Developer",
                     "Flutter Developer",
@@ -130,7 +128,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Description */}
+         
           <motion.div variants={itemVariants} className="mb-10">
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               A dedicated Full-Stack Developer with experience in frontend, backend, and Flutter development. 
@@ -138,7 +136,7 @@ const Hero = () => {
             </p>
           </motion.div>
 
-          {/* Buttons */}
+         
           <motion.div variants={itemVariants} className="mb-10">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.a
@@ -166,7 +164,6 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Social Icons */}
           <motion.div variants={itemVariants}>
             <div className="flex justify-center space-x-6">
               {socialLinks.map((social, index) => (
@@ -187,7 +184,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
