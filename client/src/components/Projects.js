@@ -6,7 +6,7 @@ import { SiMongodb, SiExpress, SiTailwindcss, SiFirebase, SiFlutter, SiWix } fro
 const projects = [
   {
     id: 1,
-    title: "Ecommerce Website",
+    title: "Craftify Website",
     description: "Built a fully functional e-commerce website with admin panel for product and order management using MERN Stack.",
     technologies: [
       { name: "React", icon: FaReact, color: "text-blue-400" },
@@ -15,20 +15,20 @@ const projects = [
       { name: "Express", icon: SiExpress, color: "text-gray-400" }
     ],
     image: "https://blog.pwskills.com/wp-content/uploads/2024/09/MERN-Stack-Full-Form-1024x538.webp",
-    githubUrl: "https://github.com/piyush8i8",
+    githubUrl: "https://github.com/piyush8i8/E-commerce-Website",
     liveUrl: "#",
     category: "Full Stack"
   },
   {
     id: 2,
-    title: "Craftify Project",
-    description: "Creative frontend-based project showcasing modern design principles and user interface development.",
+    title: "Visitor Project",
+    description: "Creative frontend-based and backend project showcasing modern design principles and user interface development.",
     technologies: [
       { name: "React", icon: FaReact, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-teal-400" }
     ],
-    image: "https://assets.website-files.com/5bb2f0c1a87bf55a5b18cc0b/5cee8d134e34b52de6b07e6f_ecom-stack-hero.png",
-    githubUrl: "https://github.com/piyush8i8",
+    image: "https://siterecording.com/images/blog/website-visitors-tools.png?v=1677668458041789516",
+    githubUrl: "https://github.com/piyush8i8/Visitor-WebApp",
     liveUrl: "#",
     category: "Frontend"
   },
@@ -43,7 +43,7 @@ const projects = [
       { name: "Express", icon: SiExpress, color: "text-gray-400" }
     ],
     image: "https://eu-images.contentstack.com/v3/assets/blt892f41c9788ae399/blt8b8119d066a83fac/65ba056da9ee99040a25afdc/bruno_simon_portfolio.jpg?",
-    githubUrl: "https://github.com/piyush8i8",
+    githubUrl: "https://github.com/piyush8i8/MyPortpolio",
     liveUrl: "https://portpolio-piyush-kumar.onrender.com",
     category: "Full Stack"
   },
@@ -69,7 +69,7 @@ const projects = [
       { name: "Console", icon: FaDesktop, color: "text-gray-400" }
     ],
     image: "https://tse4.mm.bing.net/th/id/OIP.Th6e4pBF4LZlG9vdP43dCQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-    githubUrl: "https://github.com/piyush8i8",
+    githubUrl: "https://github.com/piyush8i8/Votting_system",
     liveUrl: "#",
     category: "Console"
   },
@@ -82,7 +82,7 @@ const projects = [
       { name: "Mobile", icon: FaMobile, color: "text-green-400" }
     ],
     image: "https://i.pinimg.com/originals/3d/a0/97/3da097bfde49aef8e7b0aa00b7ac3ae1.png",
-    githubUrl: "https://github.com/piyush8i8",
+    githubUrl: "https://github.com/piyush8i8/Mausam_Appp",
     liveUrl: "#",
     category: "Mobile"
   }

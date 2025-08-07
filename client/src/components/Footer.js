@@ -13,7 +13,7 @@ const socialLinks = [
   },
   { 
     icon: FaLinkedin, 
-    href: "https://linkedin.com/in/piyushkumar", 
+    href: "https://www.linkedin.com/in/piyush-kumar-464b16251", 
     label: "LinkedIn",
     hoverColor: "hover:text-blue-600 dark:hover:text-blue-400",
     bgHover: "hover:bg-blue-50 dark:hover:bg-blue-900/30"
